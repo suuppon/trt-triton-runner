@@ -33,6 +33,11 @@ This repository provides shell scripts that automatically:
 - NVIDIA Docker runtime (`nvidia-docker2` or Docker with `--runtime=nvidia` support)
 - For Jetson devices: TensorRT installed on the host system (for version detection)
 
+## Resources
+
+- [Triton Inference Server on NGC](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/tritonserver) - Official Triton Inference Server container images
+- [TensorRT on NGC](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-tensorrt) - Official TensorRT container images for Jetson (L4T)
+
 ## Scripts
 
 ### 1. `run_tensorrt_container.sh`
@@ -209,6 +214,7 @@ trt-triton-runner/
 - Reads TensorRT version from `/usr/lib/aarch64-linux-gnu/libnvinfer.so`
 - Uses `nvcr.io/nvidia/l4t-tensorrt:rX.Y.Z-devel` format
 - Example: TensorRT 8.6.1 → `l4t-tensorrt:r8.6.1-devel`
+- See available tags: [TensorRT on NGC](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-tensorrt)
 
 **Non-Jetson:**
 - Default: `nvcr.io/nvidia/tensorrt:25.10-py3`
@@ -224,6 +230,8 @@ trt-triton-runner/
 **Non-Jetson:**
 - Default: `tritonserver:25.10-py3`
 - Can be overridden with `TRITON_TAG` or `TRITON_IMAGE`
+
+See available tags: [Triton Inference Server on NGC](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/tritonserver)
 
 ## Troubleshooting
 
